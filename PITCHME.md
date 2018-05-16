@@ -43,11 +43,11 @@ Decentraland | ERC721
 CrytoPunks | ERC20
 CryptoCelebrities | ?
 
-++++
++++
 
 ## Rare Pepe
 
-++++
++++
 
 ## CryptoKitties 
 
@@ -57,7 +57,7 @@ CryptoCelebrities | ?
 * CryptoKitties, uses the lesser known ERC721 standard, for non-fungible tokens
 * Under this standard, you ensure that each token has its unique attributes and values and that it cannot be substituted for another, making it perfect for solutions that depends on tracking individual units or entities of any kind
 
-++++
++++
 
 ## Decentraland 
 
@@ -72,7 +72,7 @@ CryptoCelebrities | ?
 * This token serves as a proxy for the most of claiming a new parcel 
 * The LAND contract uses a burn function to destroy MANA and create a new entry in the LAND registry. New parcels need to be adjacent to a non-empty parcel. 
 
-++++
++++
 
 ## CryptoPunks 
 
