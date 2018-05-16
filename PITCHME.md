@@ -83,7 +83,7 @@ CryptoCelebrities | ?
 * Cryptopunks uses a similar system to ERC20 tokens-  the officialt webiste descibes them as "almost ann ERC20 token"
 * However, none of the other methods are the same as ERC20 tokens because you’re not transferring a simple balance, but need to reference which specific punk you want to transfer. 
 
-++++
++++
 
 ## CryptoCelebrities 
 
@@ -101,7 +101,7 @@ CryptoCelebrities | ?
 * NEP-5
 * NEP-10
 
-++++
++++
 
 ## ERC20
 
@@ -111,7 +111,7 @@ CryptoCelebrities | ?
 
 ERC20 is insufficient for tracking NFTs because each asset is distinct (non-fungible), wheares asch of a quantity of tokens is identicl (fungible)
 
-++++
++++
 
 ## ERC721
 
@@ -123,7 +123,7 @@ These features strain the Ethereum network, when the only way to transfer tokens
 
 There needed to be a way to transfer non-fungible tokens in lots and trade in a decentralised safe manner without incurring massive costs 
 
-++++
++++
 
 ## ERC875
 
@@ -131,7 +131,7 @@ There needed to be a way to transfer non-fungible tokens in lots and trade in a 
 * Tokens are stored in arrays and can be transferred in multiples by specfying each token index
 * This results in savings and a lower transaction burden on the network as you can move many tokens in one transaction burden on the network
 
-++++
++++
 
 ## ERC821
 
