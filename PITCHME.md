@@ -105,6 +105,7 @@ CryptoCelebrities | ?
 
 ## ERC20
 
+* It is a fungible token 
 * Allows for the implementation of a standard API for tokens within smart contracts
 * Provides the basic functionality to transfer tokens
 * Allowed tokens to be approved so they can be spent by another on chain third party 
@@ -135,6 +136,9 @@ There needed to be a way to transfer non-fungible tokens in lots and trade in a 
 
 ## ERC821
 
++++
+
+##
 ---
 
 ## **Ticketing**
@@ -238,3 +242,44 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 * When a payment has been completed, the monetary amounts of tickets, that were sold will be divided as indicated in the request over the different parties
 * Paying these parties will happen as soon as either a set threshold is reached or multiple days of inactivity have passed.
 This means that parties will have their money a lot earlier, instead of waiting for an event to occur
+
+---
+
+# EsPass
+
+* The first iteration will use the Ethereum Blockchain exclusively 
+* The basic smartPass is like the coin contract- instead of coins the tickets are managed 
+* For connecting the passes with other contracts will follow the ERC20 standard
+
+---
+
+# TicketChain 
+
+* Each ticket on TicketChain cannot be printed or copied as a screenshot because the QR code changes every few seconds
+* Functioning next year
+
+---
+
+# Eventchain 
+
+* Using the Ethereum blockchain as a foundation, EventChain brings a higher level of transaction accountability and scalability to event ticketing industry than any existing centralised ticketing architecture available
+* Ticketing platforms receive heavy traffic on the ticket release date. EventChain SmartTickets will be distributed on an unlimited number of websites through a plugin, dispersing traffic away from a centralised server, avoiding potential crashes and allowing significantly more people to buy tickets simultaneously 
+* Beta release of the SmartTicketing system is available. 
+* News, emotions, photos, event maps, storage of autographed tickets form part of the application’s offering 
+
+---
+
+# Upgraded Inc. 
+* It is Blockchain underpinning allows event owners to know exactly who has ownership over the life of the ticket, who ultimately was the fan who attended the events and provides valuable opportunities to reach the fan. 
+* Resides on the Ethereum Blockchain 
+
+---
+
+# Crypto.Tickets
+
+* Tickets Wallet is a revolutionary app for storing  smart tickets and  experiences
+* It is based on Ethereum blockchain technology
+* The app generates a dynamically changing code, which is impossible to copy or pass on
+* Each ticket has its own unique identifier, which is generated using a special encryption algorithm developed and thus is guarantees that the ticket cannot be counterfeited
+
+---
