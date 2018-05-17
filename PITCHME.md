@@ -136,9 +136,7 @@ There needed to be a way to transfer non-fungible tokens in lots and trade in a 
 
 ## ERC821
 
-+++
 
-##
 ---
 
 ## **Ticketing**
@@ -155,23 +153,33 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 
 * The Aventus Protocol is based on blockchain technology- used in cryptocurrencies such as bitcoin- which would allow event organisers to give ticket a unique identity that is tied to its owner
 * Because the tickets are based on blockchain- a linked list of records where each new one contains an encrypted version of the previous one
+* The core Aventus Protocol is a global, open-source blockchain ticketing smart contract backbone, built on the Ethereum network 
+* Service and application layer may be developed, drawing from the power of the Aventus Protocol 
 * The software also allows event promoters to keep an easy record of who owns the ticket, which means they can control the prices
-* For the Word Cup, Aventus will join forces with another company, Blocside, and expect to work with football clubs next year on season tickets. 
+* Public sale began in the 4th quater of 2017
+* For the 2018 FIFA Word Cup, Aventus will join forces with another company, Blocside, and expects to work with football clubs next year on season tickets. 
+* Aventus has announced Rob Edwards (previously of Select Tochnologies and Ticket.com)as their new COO 
 
 ---
 
 # Blocside 
 
 * BlocSide Sports is creating a digital platform that leverages frictionless payments, mobile ticketing, augmented reality, and Blockchain technology to improve fan engagement within professional football
+* It will be powered by the Aventus Procotol 
 * BlocSide will issue MVP Token, which is an ERC-20 compliant token that operates on the Ethereum blockchain
 * ERC20 is a community defined standard that dictates a minimum set of functionality to ensure interoperability between n various tokens. 
 * A fixed number of MVP Tokens (500 000 000) will be generated before the upcoming Token sale 
 * 300 000 000 tokens will be sold in the token sale via a Token Sale Etheruem Smart Contract- This will allow customers to exchange Ether for tokens. (Tokens can be exchanged for fiat or digital currency only through third party exchanges and not by BlocSide or on the BlocSide Platform.)
+* Blocside currently has partnerships with 25 football clubs worldwide- and is fuelled by a series of events during the 2018 FIFA World Cup across the US, UK and Europe (totalling over 10 000 tickets)
+* Blocside launched in Q2 of 2018
 
 ---
 
 # GET
 
+* GET offered first tickets on the blockchain in Q4 2016 for an ASR Blockchain Meetup
+* ICO Q4 2017, Raised 10.935 ETH
+* It is predicted that Q4 2018 the GET Protocol will be used to register value flows and ownership of 50 000 tickets for more than 75 events
 * The GET Protocol offers a blockchain based smart ticketing solution that can be used by ticketing companies and event organisers to completely merge the primary and secondary ticketing market, and thus eliminating scalping
 * The protocol gives complete control over the sale and trade between ticket holders from the moment the first ticket is sold until the last ticket is scanned- Every ticket is guaranteed unique, with makes ticket fraud impossible
 * The protocol will offer these features while providing absolute transparency for all actors 
@@ -190,8 +198,12 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 
 # AmicorumLive 
 
+* Q1 2019 Global Platform Launch 
 * Amicorum is a crowdsourced blockchain-based marketplace and peer-peer ecosystem for ticket reseal of music festivals and concerts
-* Buyer’s (Fesitval/Concert enthusiasts) will be able to buy tickets (that are resold) with the AMI token (the new cryptocurrency based not Ethereum blockchain) from the sellers at 0 transaction feel and 0 processing fees.
+* The ERC20 compatible token will be the onyl Utilty tokens that will be used on the platform for sale and purchase of tickets in the secondard re-sale market 
+* The tokenisation model focuses on real time conversion of ticket price itno AMI Tokens (value from exchange) and usage by both buyers and sellers 
+* The AMI token will be listed on exchanges (to be annouched) and will be transferable to other cryptocurrencies and fiat currencies
+* The AMI toekn will be the only means of transaction on the AmicorumLive platform 
 
 ---
 
@@ -201,7 +213,7 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 * Being an intermediary between various entities involved in the ticket re-selling process, the platform serves as a guarantor of transaction security, tickets’ validity, timely payment and delivery
 * Eticket4 ticketing platform exists and its functionality is already available to ticket brokers and ticker buyers
 * With the introduction of the blockchain-based functionality all token holders will contribute their efforts to its further development and receive new possibilities that would likely extend their knowledge of ticketing market and help them to take extra advantage of it
-* In the fourth quarter of 2018 Eticket4 plans to introduce the blockchain-based functionality and new loyalty reward system based on ET4 crypto tokens
+* In Q4 2018 Eticket4 plans to introduce the blockchain-based functionality and new loyalty reward system based on ET4 crypto tokens
 * The token conforms to the widely distributed standard ERC20
 * The token will be prepared in cooperation with Phenom (Crypto payment system) using a smart contract written on Solidity 
 * Smart contract will ensure transparency of the entire process of token distribution. Every single transaction will also be recorded into smart contracts. 
@@ -211,18 +223,14 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 # Blocktix 
 
 * The core purpose of Bloctix is to provide a decentralised event hosting and ticket distribution network. 
+* Blocktix has announced a public available alpha in Q4 of 2017. In months leading up to this announcement several wire-frames where published on their blog 
 * Companies and individuals can buy and sell tickets through unforgeable cryptographic signatures stored on the blockchain. With this approach, the process of buying and selling tickets has been simplfied by removing the infrastructure of centralised server 
 * Both parties can therefore enjoy the lowest fees and no downtime due to the decentralised nature
 * The blockchain is the heart of our application and is tasked to secure a wide range of features such as payments, tickets, and the event registry
 * Blocktic will be built on Ethereum because its one of the few blockchains that provides an efficient and practical toolset for smart contracts
 * It will serve as the default payment gateway of our application, meaning tickets have to be purchased with the ETH cryptocurrency
 * Other payment gateways such as credit cards and bank transfers will be later integrated through third parties
-
----
-
-# BitTicket 
-
-* BitTicket provides one with one wallet QR code that holds all tickets securely, no matter which ticketing provider one has bought them from 
+* Advisors include, Randy Jackson and Everette Harp 
 
 ---
 
@@ -231,6 +239,7 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 * Their protocol can be leveraged by existing event ticketing platforms, event organisers, promoters, and artists to provide greater transparency’s scrutiny, and efficiency in the event life-cycle. 
 * They have began selling tickets to the State of Digital Money on the Ethereum Blockchain 
 * Their primary business is selling event tickets. They implement blockchain to enable them to provide the best value for customers 
+* Sold first ticket in Q2 2017
 
 ---
 
@@ -256,7 +265,7 @@ This means that parties will have their money a lot earlier, instead of waiting 
 # TicketChain 
 
 * Each ticket on TicketChain cannot be printed or copied as a screenshot because the QR code changes every few seconds
-* Functioning next year
+* Q4 2017 beta version launch 
 
 ---
 
@@ -264,7 +273,7 @@ This means that parties will have their money a lot earlier, instead of waiting 
 
 * Using the Ethereum blockchain as a foundation, EventChain brings a higher level of transaction accountability and scalability to event ticketing industry than any existing centralised ticketing architecture available
 * Ticketing platforms receive heavy traffic on the ticket release date. EventChain SmartTickets will be distributed on an unlimited number of websites through a plugin, dispersing traffic away from a centralised server, avoiding potential crashes and allowing significantly more people to buy tickets simultaneously 
-* Beta release of the SmartTicketing system is available. 
+* Beta release of the SmartTicketing system is available- Q1 2018
 * News, emotions, photos, event maps, storage of autographed tickets form part of the application’s offering 
 
 ---
@@ -283,3 +292,5 @@ This means that parties will have their money a lot earlier, instead of waiting 
 * Each ticket has its own unique identifier, which is generated using a special encryption algorithm developed and thus is guarantees that the ticket cannot be counterfeited
 
 ---
+
+![Roadmap](https://vizzlo.com/share/_19RY0t1R5KA8tbSJCHg-Q)
