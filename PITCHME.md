@@ -14,6 +14,8 @@ When a token is fungible is usually means two things:
 1. Only the quantity matters
 2. Any amount of it can be merged into a larger amount of it- making it undistinguishable from the rest 
 
+---
+
 ## Non- Fungible Tokens 
 
 *Non-fungible tokens (NFTs), are unique in nature and can be distinguished from each other. It is the characteristics of a non-fungible item itself that make it desirable and differentiated, rather than it being a placeholder or representation.*
@@ -50,7 +52,7 @@ CryptoCelebrities | ERC721
 ## Rare Pepe
 * Rare Pepe is based on an internet meme called Pepe The Frog that has been around since 2005 and became popular on 4chan
 * Rarepepes are digital trading cards that are traded as counterparty (XCP) assets on the Bitcoin blockchain. 
-* The UX for the first-generation of digital collectibles was bad and the friction involved has likely prevented them from gaining broader adoption
+* The UX for the first-generation of digital collectibles was poor 
 * A bitcoin user that wants to buy a Rare Pepe must buy a new cryptocurrency on a different platform designed specifically for one type of non-fungible asset. 
 
 +++
@@ -58,8 +60,7 @@ CryptoCelebrities | ERC721
 ## CryptoKitties 
 
 * CryptoKitties is a digital collectible game based around cats that are breakable and tradable
-* Each cat is unique and individually owned; it cannot be replicated, taken away or destroyed
-* Each of these cats is represented by a non fungible token on the CryptoKitties smart contract
+* Each cat is unique and individually owned; it cannot be replicated, taken away or destroyed 
 * CryptoKitties, uses the lesser known ERC721 standard, for non-fungible tokens
 * Under this standard, you ensure that each token has its unique attributes and values and that it cannot be substituted for another, making it perfect for solutions that depends on tracking individual units or entities of any kind
 
@@ -70,8 +71,7 @@ CryptoCelebrities | ERC721
 * Land in Decentraland is permanently owned by the community, giving them full control over their creations- creating an immutable record of ownership
 * Decentraland uses an Ethereum smart contract to maintain a ledger of ownership for land parcels in the virtual world 
 * Decentraland clients will connect to the Ethereum network to fetch updates to the state of the LAND smart contract
-* LAND is bought by burning MANA (MANA can also be used to make in-world purchases of digital goods and services), a fungible ERC20 token of fixed supply
-* The LAND contract uses a burn function to destroy MANA and create a new entry in the LAND registry. New parcels need to be adjacent to a non-empty parcel. 
+* LAND is bought by burning MANA (MANA can also be used to make in-world purchases of digital goods and services), a fungible ERC20 token of fixed supply (burn function-creates a new entry)
 
 +++
 
@@ -79,14 +79,14 @@ CryptoCelebrities | ERC721
 
 * The CyptoPunks are 24x24 pixel art images, generated algorithmically
 * There are 10 000 unique collectible charaters with proof of owership stored on the Ethereum blockchain   
-* Cryptopunks uses a similar system to ERC20 tokens-  the official webiste descibes them as "almost ann ERC20 token"
+* Cryptopunks uses a similar system to ERC20 tokens-  the official webiste descibes them as "almost an ERC20 token"
 
 +++
 
 ## CryptoCelebrities 
 
 * CryptoCelebrities is the blockchain based game where you can buy, sell, or trade and breed your favourite celebrities that are made and generated over Ethereum blockchain
-* It is fully transparent game/system because of being on the Ethereum network. 
+* It is a fully transparent game/system because of being on the Ethereum network. 
 
 ---
 
@@ -101,7 +101,10 @@ CryptoCelebrities | ERC721
 
 ## ERC
 
-ERC stands for Ethereum Request for Comment. An ERC is authored by Ethereum community developers in the form of a memorandum describing methods, behaviours, research, or innovations applicable to the working of the Ethereum ecosystem. It is submitted either for peer review or simply to convey new concepts or information. After core developers and community approval, the proposal became a standard. 
+* ERC stands for Ethereum Request for Comment
+* Authored by Ethereum community developers in the form of a memorandum (methods, behaviours, research, or innovations)  
+* It is submitted either for peer review or simply to convey new concepts or information
+* After core developers and community approval, the proposal became a standard. 
 
 +++
 
@@ -112,7 +115,7 @@ ERC stands for Ethereum Request for Comment. An ERC is authored by Ethereum comm
 * Provides the basic functionality to transfer tokens
 * Allowed tokens to be approved so they can be spent by another on chain third party 
 
-*ERC20 is insufficient for tracking NFTs because each asset is distinct (non-fungible), wheares asch of a quantity of tokens is identicl (fungible)*
+*ERC20 is insufficient for tracking NFTs because each asset is distinct (non-fungible), wheares each of a quantity of tokens is identical (fungible)*
 
 +++
 
@@ -122,8 +125,7 @@ ERC stands for Ethereum Request for Comment. An ERC is authored by Ethereum comm
 * This standard provides basic functionality to track and transfer NFTs 
 * It has allowed smart contracts to operate as tradable tokens , similar to ERC20
 
-*ERC721 is expensive to transfer, as it has to be done one by one, and it lacks a cohesive strategy for efficiently trading each token
-These features strain the Ethereum network, when the only way to transfer tokens is one by one, rather than in lots- you can't sell a crytopKitty cheaply- and this creates a lot of congestion* 
+*ERC721 is expensive to transfer, as it has to be done one by one, and it lacks a cohesive strategy for efficiently trading each token (strain-->congestion) 
 
 +++
 
@@ -133,16 +135,18 @@ These features strain the Ethereum network, when the only way to transfer tokens
 * Tokens are stored in arrays and can be transferred in multiples by specfying each token index
 * This results in savings and a lower transaction burden on the network as you can move many tokens in one transaction bundle on the network
 
++++
+
 ## Neo
 
 * Trinity is aiming to develop an NFT standard for the NEO blockchain, NEP-10 
 * NEO Enhancement Proposal for an NFT standard has yet to be submitted for review, and other developers within the ecosystem are also believed to be working on a similar standard
 
-+++
+---
 
 ## **Ticketing**
 
-The main objective of using non-fungible tokens in the event ticketing industry is to de-silo the industry in a decentralised manner, allowing ticketing applications and promoters to automatically sell tickets for other events and gain commission for doing so. This enables event organisers to reach a wider audience. 
+The main objective of using non-fungible tokens in the event ticketing industry is to a decentralise the industry, allowing ticketing applications and promoters to automatically sell tickets for other events and gain commission for doing so. This enables event organisers to reach a wider audience. 
 
 ---
 
@@ -157,9 +161,8 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 * The Aventus Protocol is based on blockchain technology- used in cryptocurrencies such as bitcoin- which would allow event organisers to give ticket a unique identity that is tied to its owner
 * Because the tickets are based on blockchain- a linked list of records where each new one contains an encrypted version of the previous one
 * The core Aventus Protocol is a global, open-source blockchain ticketing smart contract backbone, built on the Ethereum network 
-* Service and application layer may be developed, drawing from the power of the Aventus Protocol 
 
----
++++
 
 * The software also allows event promoters to keep an easy record of who owns the ticket, which means they can control the prices
 * Public sale began in the 4th quater of 2017
@@ -173,6 +176,9 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 * BlocSide Sports is creating a digital platform that leverages frictionless payments, mobile ticketing, augmented reality, and Blockchain technology to improve fan engagement within professional football
 * It will be powered by the Aventus Procotol 
 * BlocSide will issue MVP Token, which is an ERC-20 compliant token that operates on the Ethereum blockchain
+
++++
+
 * Blocside currently has partnerships with 25 football clubs worldwide- and is fuelled by a series of events during the 2018 FIFA World Cup across the US, UK and Europe (totalling over 10 000 tickets)
 * Blocside launched in Q2 of 2018
 
@@ -183,6 +189,9 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 * GET offered first tickets on the blockchain in Q4 2016 for an ASR Blockchain Meetup
 * It is predicted that Q4 2018 the GET Protocol will be used to register value flows and ownership of 50 000 tickets for more than 75 events
 * GET introduces a smart-ticketing protocol built upon the Ethereum blockchain that will facilitate as a back-end backbone to the sale and trade of event tickets by issuing smart tickets to wallet addresses
+
++++
+
 * The owner of such a smart ticket is free to anonymously sell a ticket but can only do so within the decentralised and issuance price restricting infrastructure/rule-structure of the GET protocol
 * This ensures that ticket trades are done safely and within a set price margin
 * Over the counter trade or additional off-chain fee surcharges are not possible as trade is anonymous and the tickets QR code non-static
@@ -193,9 +202,12 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 
 * Q1 2019 Global Platform Launch 
 * Amicorum is a crowdsourced blockchain-based marketplace and peer-peer ecosystem for ticket reseal of music festivals and concerts
-* The ERC20 compatible token will be the onyl Utilty tokens that will be used on the platform for sale and purchase of tickets in the secondary re-sale market 
+* The ERC20 compatible token will be the only utility tokens that will be used on the platform for sale and purchase of tickets in the secondary re-sale market 
+
++++
+
 * The tokenisation model focuses on real time conversion of ticket price ino AMI Tokens (value from exchange) and usage by both buyers and sellers 
-* The AMI token will be listed on exchanges (to be annouched) and will be transferable to other cryptocurrencies and fiat currencies
+* The AMI token will be listed on exchanges and will be transferable to other cryptocurrencies and fiat currencies
 * The AMI token will be the only means of transaction on the AmicorumLive platform 
 
 ---
@@ -205,17 +217,18 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 * Eticket4 is an international secondary ticketing platform developed by Israeli entrepreneurs in 2015
 * Being an intermediary between various entities involved in the ticket re-selling process, the platform serves as a guarantor of transaction security, tickets’ validity, timely payment and delivery
 * Eticket4 ticketing platform exists and its functionality is already available to ticket brokers and ticker buyers
+
++++
+
 * In Q4 2018 Eticket4 plans to introduce the blockchain-based functionality and new loyalty reward system based on ET4 crypto tokens
-* The token conforms to the widely distributed standard ERC20
+* The token conforms to ERC20
 * The token will be prepared in cooperation with Phenom (Crypto payment system) using a smart contract written on Solidity 
 
 ---
 
 # Blocktix 
 
-* Blocktix has announced a public available alpha in Q4 of 2017. In months leading up to this announcement several wire-frames where published on their blog 
-* Both parties can therefore enjoy the lowest fees and no downtime due to the decentralised nature
-* The blockchain is the heart of our application and is tasked to secure a wide range of features such as payments, tickets, and the event registry
+* Blocktix announced a public available alpha in Q4 of 2017
 * Blocktic will be built on Ethereum blockchain
 * It will serve as the default payment gateway of the application- tickets have to be purchased with the ETH cryptocurrency
 * Other payment gateways such as credit cards and bank transfers will be later integrated through third parties
@@ -233,10 +246,10 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 
 # Blockets 
 
-* They employ transaction caching as the Ethereum Blockchain is not realtime (it may take up to 10 minutes to have a transaction confirmed)- The caching system is to avoid accidental oversale
+* They employ transaction caching since the Ethereum Blockchain is not realtime (it may take up to 10 minutes to have a transaction confirmed)- The caching system is to avoid accidental oversale
 * As it is perceived, Blockchain can be difficult to deal with directly, so users are provided with a friendly wrapper around the technology- thus one can work with it, without any blockchain knowledge required. 
 
----
++++
 
 * Blockets SplitPayments API- is an interface that a ticket-selling service can dispatch to, to handle the actual payments of the tickets
 * When a payment has been completed, the monetary amounts of tickets, that were sold will be divided as indicated in the request over the different parties
@@ -248,7 +261,6 @@ This means that parties will have their money a lot earlier, instead of waiting 
 # EsPass
 
 * The first iteration will use the Ethereum Blockchain exclusively 
-* The basic smartPass is like the coin contract- instead of coins the tickets are managed 
 * For connecting the passes with other contracts will follow the ERC20 standard
 
 ---
@@ -263,7 +275,7 @@ This means that parties will have their money a lot earlier, instead of waiting 
 # Eventchain 
 
 * Uses the Ethereum blockchain as a foundation
-* Ticketing platforms receive heavy traffic on the ticket release date. EventChain SmartTickets will be distributed on an unlimited number of websites through a plugin, dispersing traffic away from a centralised server, avoiding potential crashes and allowing significantly more people to buy tickets simultaneously 
+* Since ticketing platforms receive heavy traffic on the ticket release date- EVC will be distributed on an unlimited number of websites through a plugin
 * Beta release of the SmartTicketing system is available- Q1 2018
 * News, emotions, photos, event maps, storage of autographed tickets form part of the application’s offering 
 
