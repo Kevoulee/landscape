@@ -349,3 +349,22 @@ This means that parties will have their money a lot earlier, instead of waiting 
 ---
 
 ![Roadmap](Roadmap.png)
+
+---
+
+## Value-Added Preposition 
+
+* Anonymously sell a ticket
+* Dynamic QR code
+* Distributed on an unlimited number of websites through a plugin
+* Employ transaction caching to avoid accidental oversale
+* News, emotions, photos, event maps, storage of autographed tickets form part of the application’s offering 
+
+---
+
+## Notable 
+
+* Decentralised governance- TIX and AVT have instilled the reliance on the constant involvement of their tokens holders in the maintaining of the protocol
+* Transaction and processing costs? (The value of GET is guaranteed by covering for these transition and trading costs, with a minimum price of E0.50 per smart ticket)
+* Token Velocity- the incentive for holding the token 
+
