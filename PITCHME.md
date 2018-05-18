@@ -26,18 +26,19 @@ When a token is fungible is usually means two things:
 
 Non-fungible tokens create digital scarcity that can be verified without the need for a centralising organisation of confirm authenticity. 
 
+*Blockchain technology is significant because it enables a decentralised way to maintain distinct, digitally scarce items*
+
 ---
-## Types of NFTs 
+## Uses for NFTs 
 
 1. Collectibles
 2. Gaming
 3. Property 
-4. Keys
 5. Ticketing
 
 ---
 
-## Popular Implementation of NFTs
+## Popular Implementation of Collectible NFTs
 
 Example of NFT | Mode of Implementation 
 -------------- | ---------------
@@ -51,7 +52,7 @@ CryptoCelebrities | ERC721
 
 ## Rare Pepe
 * Rare Pepe is based on an internet meme called Pepe The Frog that has been around since 2005 and became popular on 4chan
-* Rarepepes are digital trading cards that are traded as counterparty (XCP) assets on the Bitcoin blockchain. 
+* Rare pepes are digital trading cards that are traded as counterparty (XCP) assets on the Bitcoin blockchain. 
 * The UX for the first-generation of digital collectibles was poor 
 * A bitcoin user that wants to buy a Rare Pepe must buy a new cryptocurrency on a different platform designed specifically for one type of non-fungible asset. 
 
@@ -61,7 +62,7 @@ CryptoCelebrities | ERC721
 
 ## CryptoKitties 
 
-* CryptoKitties is a digital collectible game based around cats that are breakable and tradable
+* CryptoKitties is a Ethereum based digital collectible game based around cats that are breakable and tradable
 * Each cat is unique and individually owned; it cannot be replicated, taken away or destroyed 
 * CryptoKitties, uses the lesser known ERC721 standard, for non-fungible tokens
 * Under this standard, you ensure that each token has its unique attributes and values and that it cannot be substituted for another, making it perfect for solutions that depends on tracking individual units or entities of any kind
@@ -225,12 +226,12 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 # AmicorumLive 
 
 * Q1 2019 Global Platform Launch 
-* Amicorum is a crowdsourced blockchain-based marketplace and peer-peer ecosystem for ticket reseal of music festivals and concerts
+* Amicorum is a crowdsourced blockchain-based marketplace and peer-peer ecosystem for ticket resale of music festivals and concerts
 * The ERC20 compatible token will be the only utility tokens that will be used on the platform for sale and purchase of tickets in the secondary re-sale market 
 
 +++
 
-* The tokenisation model focuses on real time conversion of ticket price ino AMI Tokens (value from exchange) and usage by both buyers and sellers 
+* The tokenisation model focuses on real time conversion of ticket price into AMI Tokens (value from exchange) and usage by both buyers and sellers 
 * The AMI token will be listed on exchanges and will be transferable to other cryptocurrencies and fiat currencies
 * The AMI token will be the only means of transaction on the AmicorumLive platform 
 
@@ -272,7 +273,7 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 # HelloSugoi 
 
 * Their protocol can be leveraged by existing event ticketing platforms, event organisers, promoters, and artists to provide greater transparency’s scrutiny, and efficiency in the event life-cycle
-* They have began selling tickets to the State of Digital Money on the Ethereum Blockchain- Sold first ticket in Q2 2017
+* They have began selling tickets to the State of Digital Money on the Ethereum Blockchain- Sold first ticket in Q2 2017 (Crypto COnference)
 
 +++
 
@@ -336,7 +337,7 @@ This means that parties will have their money a lot earlier, instead of waiting 
 
 # Crypto.Tickets
 
-* Tickets Wallet is a revolutionary app for storing  smart tickets and  experiences
+* Tickets Wallet is a revolutionary app for storing smart tickets and  experiences
 * It is based on Ethereum blockchain technology
 * The app generates a dynamically changing code, which is impossible to copy or pass on
 
@@ -352,12 +353,13 @@ This means that parties will have their money a lot earlier, instead of waiting 
 
 ---
 
-## Value-Added Preposition 
+## Value-Adds
 
 * Anonymously sell a ticket
 * Dynamic QR code
 * Distributed on an unlimited number of websites through a plugin
 * Employ transaction caching to avoid accidental oversale
+* Friendly wrapper
 * News, emotions, photos, event maps, storage of autographed tickets form part of the application’s offering 
 
 ---
@@ -365,6 +367,6 @@ This means that parties will have their money a lot earlier, instead of waiting 
 ## Notable 
 
 * Decentralised governance- TIX and AVT have instilled the reliance on the constant involvement of their tokens holders in the maintaining of the protocol
-* Transaction and processing costs? (The value of GET is guaranteed by covering for these transition and trading costs, with a minimum price of E0.50 per smart ticket)
+* Transaction and processing costs? (The value of GET is guaranteed by covering for these transition and trading costs, with a minimum price of ETH 0.50 per smart ticket)
 * Token Velocity- the incentive for holding the token 
 
