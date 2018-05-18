@@ -55,6 +55,8 @@ CryptoCelebrities | ERC721
 * The UX for the first-generation of digital collectibles was poor 
 * A bitcoin user that wants to buy a Rare Pepe must buy a new cryptocurrency on a different platform designed specifically for one type of non-fungible asset. 
 
+<https://thecontrol.co/digital-collectibles-a-new-category-of-tokens-emerging-fb991c1dff6a>
+
 +++
 
 ## CryptoKitties 
@@ -63,6 +65,8 @@ CryptoCelebrities | ERC721
 * Each cat is unique and individually owned; it cannot be replicated, taken away or destroyed 
 * CryptoKitties, uses the lesser known ERC721 standard, for non-fungible tokens
 * Under this standard, you ensure that each token has its unique attributes and values and that it cannot be substituted for another, making it perfect for solutions that depends on tracking individual units or entities of any kind
+
+<https://venturebeat.com/2017/12/04/cryptokitties-shows-everything-can-and-will-be-tokenized/>
 
 +++
 
@@ -73,6 +77,8 @@ CryptoCelebrities | ERC721
 * Decentraland clients will connect to the Ethereum network to fetch updates to the state of the LAND smart contract
 * LAND is bought by burning MANA (MANA can also be used to make in-world purchases of digital goods and services), a fungible ERC20 token of fixed supply (burn function-creates a new entry)
 
+[WhitePaper](https://decentraland.org/whitepaper.pdf)
+
 +++
 
 ## CryptoPunks 
@@ -81,12 +87,16 @@ CryptoCelebrities | ERC721
 * There are 10 000 unique collectible charaters with proof of owership stored on the Ethereum blockchain   
 * Cryptopunks uses a similar system to ERC20 tokens-  the official webiste descibes them as "almost an ERC20 token"
 
+<https://www.larvalabs.com/cryptopunks>
+
 +++
 
 ## CryptoCelebrities 
 
 * CryptoCelebrities is the blockchain based game where you can buy, sell, or trade and breed your favourite celebrities that are made and generated over Ethereum blockchain
 * It is a fully transparent game/system because of being on the Ethereum network. 
+
+<https://www.linkedin.com/pulse/ethereum-based-cryptoassetsnon-fungible-token-platform-rabadia>
 
 ---
 
@@ -117,6 +127,8 @@ CryptoCelebrities | ERC721
 
 *ERC20 is insufficient for tracking NFTs because each asset is distinct (non-fungible), wheares each of a quantity of tokens is identical (fungible)*
 
+<http://www.nexthoughts.com/nonfungibletoken/>
+[GitHub](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)
 +++
 
 ## ERC721
@@ -127,6 +139,8 @@ CryptoCelebrities | ERC721
 
 *ERC721 is expensive to transfer, as it has to be done one by one, and it lacks a cohesive strategy for efficiently trading each token (strain-->congestion) 
 
+<https://hackernoon.com/an-overview-of-non-fungible-tokens-5f140c32a70a>
+[GitHub](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md)
 +++
 
 ## ERC875
@@ -135,12 +149,16 @@ CryptoCelebrities | ERC721
 * Tokens are stored in arrays and can be transferred in multiples by specfying each token index
 * This results in savings and a lower transaction burden on the network as you can move many tokens in one transaction bundle on the network
 
+<https://medium.com/bitfwd/erc875-a-new-standard-for-non-fungible-tokens-and-cheap-atomic-swaps-93ab85b9e7f9>
+
 +++
 
 ## Neo
 
 * Trinity is aiming to develop an NFT standard for the NEO blockchain, NEP-10 
 * NEO Enhancement Proposal for an NFT standard has yet to be submitted for review, and other developers within the ecosystem are also believed to be working on a similar standard
+
+<https://neonewstoday.com/development/trinity-developing-non-fungible-tokens-nft-standard/>
 
 ---
 
@@ -169,6 +187,8 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 * For the 2018 FIFA Word Cup, Aventus will join forces with another company, Blocside, and expects to work with football clubs next year on season tickets. 
 * Aventus has announced Rob Edwards (previously of Select Tochnologies and Ticket.com)as their new COO 
 
+[WhitePaper](https://aventus.io/doc/whitepaper.pdf)
+
 ---
 
 # Blocside 
@@ -181,6 +201,8 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 
 * Blocside currently has partnerships with 25 football clubs worldwide- and is fuelled by a series of events during the 2018 FIFA World Cup across the US, UK and Europe (totalling over 10 000 tickets)
 * Blocside launched in Q2 of 2018
+
+[WhitePaper](https://blocside.io/assets/BlocSide_White_Paper.pdf)
 
 ---
 
@@ -196,6 +218,8 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 * This ensures that ticket trades are done safely and within a set price margin
 * Over the counter trade or additional off-chain fee surcharges are not possible as trade is anonymous and the tickets QR code non-static
 
+[WhitePaper](https://guts.tickets/files/GET-Whitepaper-GUTS-Tickets-latest.pdf)
+
 ---
 
 # AmicorumLive 
@@ -209,6 +233,8 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 * The tokenisation model focuses on real time conversion of ticket price ino AMI Tokens (value from exchange) and usage by both buyers and sellers 
 * The AMI token will be listed on exchanges and will be transferable to other cryptocurrencies and fiat currencies
 * The AMI token will be the only means of transaction on the AmicorumLive platform 
+
+[WhitePaper](https://amicorum.live/english.pdf)
 
 ---
 
@@ -224,6 +250,8 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 * The token conforms to ERC20
 * The token will be prepared in cooperation with Phenom (Crypto payment system) using a smart contract written on Solidity 
 
+[WhitePaper](https://et4.io/ET4_WP_ENG.pdf)
+
 ---
 
 # Blocktix 
@@ -234,6 +262,8 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 * Other payment gateways such as credit cards and bank transfers will be later integrated through third parties
 * Advisors include, Randy Jackson and Everette Harp 
 
+[WhitePaper](https://blocktix.io/public/doc/blocktix-wp-draft.pdf)
+
 ---
 
 # HelloSugoi 
@@ -241,6 +271,8 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 * Their protocol can be leveraged by existing event ticketing platforms, event organisers, promoters, and artists to provide greater transparency’s scrutiny, and efficiency in the event life-cycle
 * They have began selling tickets to the State of Digital Money on the Ethereum Blockchain- Sold first ticket in Q2 2017
 * Their primary business is selling event tickets. They implement blockchain to enable them to provide the best value for customers 
+
+<https://www.hellosugoi.com>
 
 ---
 
@@ -256,6 +288,8 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 * Paying these parties will happen as soon as either a set threshold is reached or multiple days of inactivity have passed.
 This means that parties will have their money a lot earlier, instead of waiting for an event to occur
 
+<https://blockets.nl>
+
 ---
 
 # EsPass
@@ -263,12 +297,16 @@ This means that parties will have their money a lot earlier, instead of waiting 
 * The first iteration will use the Ethereum Blockchain exclusively 
 * For connecting the passes with other contracts will follow the ERC20 standard
 
+<https://espass.it>
+
 ---
 
 # TicketChain 
 
 * Each ticket on TicketChain cannot be printed or copied as a screenshot because the QR code changes every few seconds
 * Q4 2017 beta version launch 
+
+<http://www.launchbox.ie/stories/ticketchain>
 
 ---
 
@@ -279,12 +317,15 @@ This means that parties will have their money a lot earlier, instead of waiting 
 * Beta release of the SmartTicketing system is available- Q1 2018
 * News, emotions, photos, event maps, storage of autographed tickets form part of the application’s offering 
 
+<https://eventchain.io>
+
 ---
 
 # Upgraded Inc. 
 * It is Blockchain underpinning allows event owners to know exactly who has ownership over the life of the ticket, who ultimately was the fan who attended the events and provides valuable opportunities to reach the fan. 
 * Resides on the Ethereum Blockchain 
 
+<https://www.upgraded-inc.com> 
 ---
 
 # Crypto.Tickets
@@ -293,6 +334,8 @@ This means that parties will have their money a lot earlier, instead of waiting 
 * It is based on Ethereum blockchain technology
 * The app generates a dynamically changing code, which is impossible to copy or pass on
 * Each ticket has its own unique identifier, which is generated using a special encryption algorithm developed and thus is guarantees that the ticket cannot be counterfeited
+
+<https://crypto.tickets/forticketbuyers>
 
 ---
 
