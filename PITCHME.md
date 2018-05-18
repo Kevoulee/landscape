@@ -259,6 +259,9 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 * Blocktix announced a public available alpha in Q4 of 2017
 * Blocktic will be built on Ethereum blockchain
 * It will serve as the default payment gateway of the application- tickets have to be purchased with the ETH cryptocurrency
+
++++
+
 * Other payment gateways such as credit cards and bank transfers will be later integrated through third parties
 * Advisors include, Randy Jackson and Everette Harp 
 
@@ -270,6 +273,9 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 
 * Their protocol can be leveraged by existing event ticketing platforms, event organisers, promoters, and artists to provide greater transparency’s scrutiny, and efficiency in the event life-cycle
 * They have began selling tickets to the State of Digital Money on the Ethereum Blockchain- Sold first ticket in Q2 2017
+
++++
+
 * Their primary business is selling event tickets. They implement blockchain to enable them to provide the best value for customers 
 
 <https://www.hellosugoi.com>
@@ -280,10 +286,10 @@ The main objective of using non-fungible tokens in the event ticketing industry 
 
 * They employ transaction caching since the Ethereum Blockchain is not realtime (it may take up to 10 minutes to have a transaction confirmed)- The caching system is to avoid accidental oversale
 * As it is perceived, Blockchain can be difficult to deal with directly, so users are provided with a friendly wrapper around the technology- thus one can work with it, without any blockchain knowledge required. 
+* Blockets SplitPayments API- is an interface that a ticket-selling service can dispatch to, to handle the actual payments of the tickets
 
 +++
 
-* Blockets SplitPayments API- is an interface that a ticket-selling service can dispatch to, to handle the actual payments of the tickets
 * When a payment has been completed, the monetary amounts of tickets, that were sold will be divided as indicated in the request over the different parties
 * Paying these parties will happen as soon as either a set threshold is reached or multiple days of inactivity have passed.
 This means that parties will have their money a lot earlier, instead of waiting for an event to occur
@@ -333,6 +339,9 @@ This means that parties will have their money a lot earlier, instead of waiting 
 * Tickets Wallet is a revolutionary app for storing  smart tickets and  experiences
 * It is based on Ethereum blockchain technology
 * The app generates a dynamically changing code, which is impossible to copy or pass on
+
++++
+
 * Each ticket has its own unique identifier, which is generated using a special encryption algorithm developed and thus is guarantees that the ticket cannot be counterfeited
 
 <https://crypto.tickets/forticketbuyers>
