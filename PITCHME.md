@@ -284,4 +284,4 @@ This means that parties will have their money a lot earlier, instead of waiting 
 
 ---
 
-![Roadmap](https://vizzlo.com/share/_19RY0t1R5KA8tbSJCHg-Q)
+![Roadmap](Roadmap.png)
