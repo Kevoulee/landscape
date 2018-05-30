@@ -20,6 +20,9 @@ When a token is fungible is usually means two things:
 
 *Non-fungible tokens (NFTs), are unique in nature and can be distinguished from each other. It is the characteristics of a non-fungible item itself that make it desirable and differentiated, rather than it being a placeholder or representation.*
 
+Note:
+Remember to describe the difference between Fungible and Non-Fungible Tokens, and how each token can become the other 
+
 ---
 
 ## Function of NFTs
