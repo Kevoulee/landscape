@@ -1,375 +1,227 @@
-# Non-Fungible Tokens 
+# Applications of Byzantine Consensus Mechanisms 
 
 ---
 
-# Definitions
+## The 'Scalability' Trilemma
 
-## Fungible Tokens 
+**Decentralization** : a core principle on which majority of the systems are build, taking into account censorship-resistance and ensuring that everyone, without prejudice, is permitted to partake in the decentralized system.
 
-*Fungibility is, essentially, a characteristic of an asset, or token, that determines whether items or quantities of the same or similar type can be completely interchangeable during exchange or utility. It has value and can be used to purchase items with the same or less value*
+**Scalability** : encompasses the ability of the network to process transactions. Thus, if a public block chain is deemed to be efficient, effective and usable, it should be designed to handle millions of users on the network.
 
----
-
-When a token is fungible is usually means two things:
-1. Only the quantity matters
-2. Any amount of it can be merged into a larger amount of it- making it undistinguishable from the rest 
+**Security** : refers to the immutability of the ledger and takes into account threats of 51% attacks, Sybil attacks and DDoS attacks etc.
 
 ---
 
-## Non- Fungible Tokens 
+## Permissionless Byzantine Fault Tolerant Protocols 
 
-*Non-fungible tokens (NFTs), are unique in nature and can be distinguished from each other. It is the characteristics of a non-fungible item itself that make it desirable and differentiated, rather than it being a placeholder or representation.*
-
-Note:
-Remember to describe the difference between Fungible and Non-Fungible Tokens, and how each token can become the other 
+*BFT protocols face several limitations when utilized in permissionless block chains. They do not scale well with the number of participants, resulting in performance deterioration for the targeted network sizes. In addition, they are not well established in this setting, thus they are prone to security issues, e.g. Sybil attacks. Currently, there are approaches that attempt to circumvent or solve this problem.*
 
 ---
 
-## Function of NFTs
+### Paxos
 
-Non-fungible tokens create digital scarcity that can be verified without the need for a centralising organisation of confirm authenticity. 
-
-*Blockchain technology is significant because it enables a decentralised way to maintain distinct, digitally scarce items*
-
----
-## Uses for NFTs 
-
-1. Collectibles
-2. Gaming
-3. Property 
-5. Ticketing
+- The Paxos family of protocols includes a spectrum of trade-offs between the number of processors, number of message delays before learning the agreed value, the activity level of individual participants, number of messages sent, and types of failures.
+- Although the FLP theorem states that there is no deterministic fault-tolerant consensus protocol that can guarantee progress in an asynchronous network, Paxos guarantees safety (consistency), and the conditions that could prevent it from making progress are difficult to provoke. 
+- Paxos achieves consensus as long as there are f failures, where f < (n-1)/2. These failures cannot be Byzantine (otherwise the BFT proof would be violated). Thus it is assumed that messages are never corrupted, and that nodes do not collude to subvert the system.
+- Paxos proceeds through a set of negotiation rounds, with one node having 'Leadership' status. Progress will stall if the leader becomes unreliable, until a new leader is elected, or if suddenly an old leader comes back online and a dispute between two leader nodes arises.
 
 ---
 
-## Popular Implementation of Collectible NFTs
+### Chandra-Toueg
 
-Example of NFT | Mode of Implementation 
--------------- | ---------------
-Rare Pepe | Counterparty 
-CryptoKitties |  ERC721
-Decentraland | ERC721
-CrytoPunks | ERC20
-CryptoCelebrities | ERC721
+- The Chandra–Toueg consensus algorithm was published by Tushar Deepak Chandra and Sam Toueg in 1996. 
+- It relies on a special node that acts as a failure detector. In essence, it pings other nodes to make sure they're still responsive.
+- This implies that the detector stays online and that the detector must continuously be made aware when new nodes join the network.
+- The algorithm itself is similar to the Paxos algorithm, which also relies on failure detectors and as such requires f<n/2, where n is the total number of processes.
+
+---
+
+### Raft 
+
+- Raft is a consensus algorithm designed as an alternative to Paxos
+- It was meant to be more understandable than Paxos by means of separation of logic, but it is also formally proven safe and offers some additional features.
+- Raft achieves consensus via an elected leader. Each follower has a timeout in which it expects the heartbeat from the leader. It is thus a synchronous protocol. If the leader fails, an election is held to find a new leader. This entails nodes nominating themselves on a first-come, first-served basis. Hung votes require the election to be scrapped and restarted. This suggests that a high degree of cooperation is required by nodes and that malicious nodes could easily collude to disrupt a leader and then prevent a new leader from being elected. Raft is a simple algorithm but is clearly unsuitable for consensus in cryptocurrency applications.
+
++++
+ 
+
+- While Paxos and Raft and many other well-known protocols tolerate crash faults, Byzantine fault tolerant protocols beginning with PBFT, tolerate even arbitrary corrupted nodes. Many subsequent protocols offer improved performance, often through optimistic execution that provides excellent performance when there are no faults, clients do not contend much, and the network is well behaved, and at least some progress otherwise.
+- In general, BFT systems are evaluated in deployment scenarios where latency and CPU are the bottleneck, thus the most effective protocols reduce the number of rounds and minimize expensive cryptographic operations.
+- Research  advocating improvement of the worst-case performance, providing service quality guarantees even when the system is under attack, even if this comes at the expense of performance in the optimistic case. However, although the "Robust BFT protocols in this vein gracefully tolerate comprised nodes, they still rely on timing assumptions about the underlying network". Thus focus shifted to asynchronous networks. [6]
+
+---
+
+### HashGraph  
+
+- The Hashgraph consensus algorithm [30], was released in 2016. 
+- It claims Byzantine fault tolerance under complete asynchrony assumptions, no leaders, no round robin, no proof-of-work, eventual consensus with probability one, and high speed in the absence of faults.
+- It is based on the gossip protocol, which is a fairly efficient distribution strategy that entails nodes randomly sharing information with each other, similar to how human beings gossip with each other.
+- Nodes jointly build a hash graph reflecting all of the gossip events. 
+- This allows Byzantine agreement to be achieved through virtual voting. 
+- Alice does not send Bob a vote over the Internet. Instead, Bob calculates what vote Alice would have sent, based on his knowledge of what Alice knows.
+- HashGraph uses digital signatures to prevent undetectable changes to transmitted messages.
+- HashGraph does not violate the FLP theorem, since it is non-deterministic.
 
 +++
 
-## Rare Pepe
-* Rare Pepe is based on an internet meme called Pepe The Frog that has been around since 2005 and became popular on 4chan
-* Rare pepes are digital trading cards that are traded as counterparty (XCP) assets on the Bitcoin blockchain. 
-* The UX for the first-generation of digital collectibles was poor 
-* A bitcoin user that wants to buy a Rare Pepe must buy a new cryptocurrency on a different platform designed specifically for one type of non-fungible asset. 
+The Hash graph has some similarities to a block chain.
+*"The HashGraph consensus algorithm is equivalent to a block chain in which the 'chain' is constantly branching, without any pruning, where no blocks are ever stale, and where each miner is allowed to mine many new blocks per second, without proof-of-work"*
 
-<https://thecontrol.co/digital-collectibles-a-new-category-of-tokens-emerging-fb991c1dff6a>
+Because each node keeps track of the hash graph, there is no need to have voting rounds in HashGraph; each node already knows what all of its peers will vote for and thus consensus is reached purely by analyzing the graph.
 
 +++
 
-## CryptoKitties 
+#### The Gossip Protocol 
 
-* CryptoKitties is a Ethereum based digital collectible game based around cats that are breakable and tradable
-* Each cat is unique and individually owned; it cannot be replicated, taken away or destroyed 
-* CryptoKitties, uses the lesser known ERC721 standard, for non-fungible tokens
-* Under this standard, you ensure that each token has its unique attributes and values and that it cannot be substituted for another, making it perfect for solutions that depends on tracking individual units or entities of any kind
+The gossip protocol works like this:
 
-<https://venturebeat.com/2017/12/04/cryptokitties-shows-everything-can-and-will-be-tokenized/>
+Alice selects a random peer node, say Bob, and sends him everything she knows. She then selects another random node and repeats the process indefinitely.
 
-+++
-
-## Decentraland 
-
-* Land in Decentraland is permanently owned by the community, giving them full control over their creations- creating an immutable record of ownership
-* Decentraland uses an Ethereum smart contract to maintain a ledger of ownership for land parcels in the virtual world 
-* Decentraland clients will connect to the Ethereum network to fetch updates to the state of the LAND smart contract
-* LAND is bought by burning MANA (MANA can also be used to make in-world purchases of digital goods and services), a fungible ERC20 token of fixed supply (burn function-creates a new entry)
-
-[WhitePaper](https://decentraland.org/whitepaper.pdf)
+Bob, on receiving Alice's information, marks this as a gossip event and fills in any gaps in his knowledge from Alice's information. Once done, he continues gossiping with his updated information.
 
 +++
 
-## CryptoPunks 
-
-* The CyptoPunks are 24x24 pixel art images, generated algorithmically
-* There are 10 000 unique collectible charaters with proof of owership stored on the Ethereum blockchain   
-* Cryptopunks uses a similar system to ERC20 tokens-  the official webiste descibes them as "almost an ERC20 token"
-
-<https://www.larvalabs.com/cryptopunks>
-
-+++
-
-## CryptoCelebrities 
-
-* CryptoCelebrities is the blockchain based game where you can buy, sell, or trade and breed your favourite celebrities that are made and generated over Ethereum blockchain
-* It is a fully transparent game/system because of being on the Ethereum network. 
-
-<https://www.linkedin.com/pulse/ethereum-based-cryptoassetsnon-fungible-token-platform-rabadia>
-
----
-
-## The Development of Non Fungibe Token Standards 
-
-* ERC20
-* ERC721
-* ERC875
-* Neo 
+The basic idea behind the Gossip Protocol is the following: 
+- A node wants to share some information to the other nodes in the network. 
+- Then periodically it randomly selects a node from the set of nodes and exchanges the information. 
+- The node that receives the information and then randomly selects a node from the set of nodes and exchanges the information, and so on. 
+- The information is periodically sent to N targets, where N is the fanout. 
+- The cycle is the number of rounds to spread the information. The fanout is the number of nodes a node gossips with in each cycle.
+- With a fanout=1, O(LogN) cycles are necessary for the update to reach all the nodes. In this way, information spreads throughout the network in an exponential fashion.
 
 +++
 
-## ERC
+#### Gossip Protocol Directed Graph
 
-* ERC stands for Ethereum Request for Comment
-* Authored by Ethereum community developers in the form of a memorandum (methods, behaviours, research, or innovations)  
-* It is submitted either for peer review or simply to convey new concepts or information
-* After core developers and community approval, the proposal became a standard. 
+Insert image of Gossip Protocol Directed Graph 
 
-+++
-
-## ERC20
-
-* It is a fungible token 
-* Allows for the implementation of a standard API for tokens within smart contracts
-* Provides the basic functionality to transfer tokens
-* Allowed tokens to be approved so they can be spent by another on chain third party 
-
-*ERC20 is insufficient for tracking NFTs because each asset is distinct (non-fungible), wheares each of a quantity of tokens is identical (fungible)*
-
-<http://www.nexthoughts.com/nonfungibletoken/>
-[GitHub](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-20.md)
-+++
-
-## ERC721
-
-* Was built in order to create non-fungible assets on the blockchain 
-* This standard provides basic functionality to track and transfer NFTs 
-* It has allowed smart contracts to operate as tradable tokens , similar to ERC20
-
-*ERC721 is expensive to transfer, as it has to be done one by one, and it lacks a cohesive strategy for efficiently trading each token (strain-->congestion) 
-
-<https://hackernoon.com/an-overview-of-non-fungible-tokens-5f140c32a70a>
-[GitHub](https://github.com/ethereum/EIPs/blob/master/EIPS/eip-721.md)
-+++
-
-## ERC875
-
-* It is a new draft standard which allows transferring non-fungible tokens in lots and contains methods to settle orders in a cheap yet equally safe and decentralised manner
-* Tokens are stored in arrays and can be transferred in multiples by specfying each token index
-* This results in savings and a lower transaction burden on the network as you can move many tokens in one transaction bundle on the network
-
-<https://medium.com/bitfwd/erc875-a-new-standard-for-non-fungible-tokens-and-cheap-atomic-swaps-93ab85b9e7f9>
+HashGraph introduces a few important concepts that are used repeatedly in later BFT consensus algorithms: famous witnesses, and strongly seeing.
 
 +++
 
-## Neo
+#### Ancestors
 
-* Trinity is aiming to develop an NFT standard for the NEO blockchain, NEP-10 
-* NEO Enhancement Proposal for an NFT standard has yet to be submitted for review, and other developers within the ecosystem are also believed to be working on a similar standard
+If an event (_x1_) comes before another event (_x2_), and they are connected by a line; the older event is an ancestor of that event.
 
-<https://neonewstoday.com/development/trinity-developing-non-fungible-tokens-nft-standard/>
+If both events were created by the _same node_, then _x1_ is a _self-ancestor_ of _x2_.
 
----
-
-## **Ticketing**
-
-The main objective of using non-fungible tokens in the event ticketing industry is to a decentralise the industry, allowing ticketing applications and promoters to automatically sell tickets for other events and gain commission for doing so. This enables event organisers to reach a wider audience. 
-
----
-
-* Thirty percent of all tickets are resold with mark-ups between 30% and 700% 
-* The event ticket market is known to be non-transparent, inexplicable transaction costs added to tickets are a common practice among ticketing services. 
-* The solution is a blockchain based event ticketing protocol used by ticketing and booking companies that will make secondary market ticket prices and ticket fraud occurrences redundant 
-
----
-
-# Aventus 
-
-* The Aventus Protocol is based on blockchain technology- used in cryptocurrencies such as bitcoin- which would allow event organisers to give ticket a unique identity that is tied to its owner
-* Because the tickets are based on blockchain- a linked list of records where each new one contains an encrypted version of the previous one
-* The core Aventus Protocol is a global, open-source blockchain ticketing smart contract backbone, built on the Ethereum network 
+**Note**: The gossip protocol defines an event as being a (self-)ancestor of itself!
 
 +++
 
-* The software also allows event promoters to keep an easy record of who owns the ticket, which means they can control the prices
-* Public sale began in the 4th quater of 2017
-* For the 2018 FIFA Word Cup, Aventus will join forces with another company, Blocside, and expects to work with football clubs next year on season tickets. 
-* Aventus has announced Rob Edwards (previously of Select Tochnologies and Ticket.com)as their new COO 
+#### Seeing
 
-[WhitePaper](https://aventus.io/doc/whitepaper.pdf)
+If an event _x1_ is an ancestor of _x2_, then we say that _x1_ **sees** _x2_ as long as the node is not aware of any forks from _x2_.
 
----
+So in the absence of forks, all events will _see_ all of their ancestors.
 
-# Blocside 
 
-* BlocSide Sports is creating a digital platform that leverages frictionless payments, mobile ticketing, augmented reality, and Blockchain technology to improve fan engagement within professional football
-* It will be powered by the Aventus Procotol 
-* BlocSide will issue MVP Token, which is an ERC-20 compliant token that operates on the Ethereum blockchain
+ ```text
+     +-----> y
+     |
+x +--+
+     |
+     +-----> z
+```
++++
+
+In the example above, x is an ancestor to both _y_ and _z_. However, because there is no ancestor relationship between _y_ and _z_, the seeing condition fails, and so _y_ cannot see _x_, and _z_ cannot see _x_.
+
+It may be the case that it takes time before nodes in the protocol detect the fork. For instance Bob may create _z_ and _y_; but share _z_ with Alice and _y_ with Charlie. Both Alice and Charlie will eventually learn about the deception, but until that point, Alice will believe that _y_ sees _x_, and Charlie will believe that _z_ sees _x_.
+
+This is where the concept of _strongly seeing_ comes in.
+
++++ 
+
+#### Strongly seeing 
+
+If a node examines its hash graph and notices that an event _z_ _sees_ an event _x_, and not only that, but it can draw an ancestor relationship (usually via multiple routes) through a super-majority of peer nodes, and that a different event from each node also sees _x_; then it is said that according to this node, that _z_ _strongly sees_ _x_.
 
 +++
 
-* Blocside currently has partnerships with 25 football clubs worldwide- and is fuelled by a series of events during the 2018 FIFA World Cup across the US, UK and Europe (totalling over 10 000 tickets)
-* Blocside launched in Q2 of 2018
+#### Illustration of Strongly Seeing 
 
-[WhitePaper](https://blocside.io/assets/BlocSide_White_Paper.pdf)
-
----
-
-# GET
-
-* GET offered first tickets on the blockchain in Q4 2016 for an ASR Blockchain Meetup
-* It is predicted that Q4 2018 the GET Protocol will be used to register value flows and ownership of 50 000 tickets for more than 75 events
-* GET introduces a smart-ticketing protocol built upon the Ethereum blockchain that will facilitate as a back-end backbone to the sale and trade of event tickets by issuing smart tickets to wallet addresses
+Insert image 
 
 +++
 
-* The owner of such a smart ticket is free to anonymously sell a ticket but can only do so within the decentralised and issuance price restricting infrastructure/rule-structure of the GET protocol
-* This ensures that ticket trades are done safely and within a set price margin
-* Over the counter trade or additional off-chain fee surcharges are not possible as trade is anonymous and the tickets QR code non-static
+#### The Construct of Gossiping
 
-[WhitePaper](https://guts.tickets/files/GET-Whitepaper-GUTS-Tickets-latest.pdf)
+The main consensus algorithm loop consists of every node (Alice), selecting a random peer node (Bob) and sharing their graph history. Now Alice and Bob have the same graph history.
 
----
+Alice and Bob both create a new event with the new knowledge they have just learnt from their peer.
 
-# AmicorumLive 
-
-* Q1 2019 Global Platform Launch 
-* Amicorum is a crowdsourced blockchain-based marketplace and peer-peer ecosystem for ticket resale of music festivals and concerts
-* The ERC20 compatible token will be the only utility tokens that will be used on the platform for sale and purchase of tickets in the secondary re-sale market 
+Alice repeats this process continuously.
 
 +++
 
-* The tokenisation model focuses on real time conversion of ticket price into AMI Tokens (value from exchange) and usage by both buyers and sellers 
-* The AMI token will be listed on exchanges and will be transferable to other cryptocurrencies and fiat currencies
-* The AMI token will be the only means of transaction on the AmicorumLive platform 
+#### Internal consensus
 
-[WhitePaper](https://amicorum.live/english.pdf)
+After a sync, a node will determine the order for as many events as possible, using three procedures.
+The algorithm uses constant _n_ (the number of nodes) and a small constant value _c_>2.  
 
----
+```text
+in parallel:
+    loop
+      sync all known events to a random member
+    end loop
 
-# Eticket4
-
-* Eticket4 is an international secondary ticketing platform developed by Israeli entrepreneurs in 2015
-* Being an intermediary between various entities involved in the ticket re-selling process, the platform serves as a guarantor of transaction security, tickets’ validity, timely payment and delivery
-* Eticket4 ticketing platform exists and its functionality is already available to ticket brokers and ticker buyers
-
+    loop
+      receive a sync
+      create a new event
+      call divideRounds
+      call decideFame
+      call findOrder
+    end loop
+```
 +++
 
-* In Q4 2018 Eticket4 plans to introduce the blockchain-based functionality and new loyalty reward system based on ET4 crypto tokens
-* The token conforms to ERC20
-* The token will be prepared in cooperation with Phenom (Crypto payment system) using a smart contract written on Solidity 
+- Here we have the Swirlds HashGraph consensus algorithm. 
+- Each member runs this in parallel. 
+- Each sync brings in new events, which are then added to the hash graph. All known events are then divided into rounds. 
+- Then the first events in each round are decided as being famous or not (through purely local Byzantine agreement with virtual voting). - Then the total order is found on those events for which enough information is available. If two members independently assign a position in history to an event, they are guaranteed to assign the same position, and guaranteed to never change it, even as more information comes in. Furthermore, each event is eventually assigned such a position, with probability one. 
 
-[WhitePaper](https://et4.io/ET4_WP_ENG.pdf)
-
----
-
-# Blocktix 
-
-* Blocktix announced a public available alpha in Q4 of 2017
-* Blocktic will be built on Ethereum blockchain
-* It will serve as the default payment gateway of the application- tickets have to be purchased with the ETH cryptocurrency
-
+   ```procedure divideRounds
+      for each event x
+        r ← max round of parents of x ( or 1 if none exist )
+        if x can strongly see more than 2/3*n round r witnesses
+          x.round ← r + 1
+        else
+          x.round ← r
+        x.witness ← ( x has no self parent ) || ( x.round > x.selfParent.round )
+   ```   
 +++
 
-* Other payment gateways such as credit cards and bank transfers will be later integrated through third parties
-* Advisors include, Randy Jackson and Everette Harp 
+The above is deemed the divideRounds procedure. As soon as an event x is known, it is assigned a round number x.round, and the boolean value x.witness is calculated, indicating whether it is the first event that a member created in that round. [[30]]
+​    
+   ```procedure decideFame
+      for each event x in order from earlier rounds to later
+        x.famous ← UNDECIDED
+        for each event y in order from earlier rounds to later
+          if x.witness and y.witness and y.round > x.round
+            d ← y.round - x.round
+            s ← the set of witness events in round y.round-1 that y can strongly see
+            v ← majority vote in s ( is TRUE for a tie )
+            t ← number of events in s with a vote of v
+            if d = 1 // first round of the election
+              y.vote ← can y see x ?
+            else if d mod c > 0 // this is a normal round
+                if t > 2* n /3 // if supermajority, then decide
+                  x.famous ← v
+                  y.vote ← v
+                  break // y loop
+                else // else, just vote
+                  y.vote ← v
+            else if t > 2* n /3 // this is a coin round
+              y.vote ← v
+            else // else flip a coin
+              y.vote ← middle bit of y.signature
+   ```
+This is the decideFame procedure. For each witness event (i.e., an event x where x.witness is true), decide whether it is famous (i.e., assign a boolean to x.famous). This decision is done by a Byzantine agreement protocol based on virtual voting. Each member runs it locally, on their own copy of the hashgraph, with no additional communication. It treats the events in the hashgraph as if they were sending votes to each other, though the calculation is purely local to a member’s computer. The member assigns votes to the witnesses of each round, for several rounds, until more than 2/3 of the population agrees. [[30]]
 
-[WhitePaper](https://blocktix.io/public/doc/blocktix-wp-draft.pdf)
+#### Criticisms
 
----
-
-# HelloSugoi 
-
-* Their protocol can be leveraged by existing event ticketing platforms, event organisers, promoters, and artists to provide greater transparency’s scrutiny, and efficiency in the event life-cycle
-* They have began selling tickets to the State of Digital Money on the Ethereum Blockchain- Sold first ticket in Q2 2017 (Crypto COnference)
-
-+++
-
-* Their primary business is selling event tickets. They implement blockchain to enable them to provide the best value for customers 
-
-<https://www.hellosugoi.com>
-
----
-
-# Blockets 
-
-* They employ transaction caching since the Ethereum Blockchain is not realtime (it may take up to 10 minutes to have a transaction confirmed)- The caching system is to avoid accidental oversale
-* As it is perceived, Blockchain can be difficult to deal with directly, so users are provided with a friendly wrapper around the technology- thus one can work with it, without any blockchain knowledge required. 
-* Blockets SplitPayments API- is an interface that a ticket-selling service can dispatch to, to handle the actual payments of the tickets
-
-+++
-
-* When a payment has been completed, the monetary amounts of tickets, that were sold will be divided as indicated in the request over the different parties
-* Paying these parties will happen as soon as either a set threshold is reached or multiple days of inactivity have passed.
-This means that parties will have their money a lot earlier, instead of waiting for an event to occur
-
-<https://blockets.nl>
-
----
-
-# EsPass
-
-* The first iteration will use the Ethereum Blockchain exclusively 
-* For connecting the passes with other contracts will follow the ERC20 standard
-
-<https://espass.it>
-
----
-
-# TicketChain 
-
-* Each ticket on TicketChain cannot be printed or copied as a screenshot because the QR code changes every few seconds
-* Q4 2017 beta version launch 
-
-<http://www.launchbox.ie/stories/ticketchain>
-
----
-
-# Eventchain 
-
-* Uses the Ethereum blockchain as a foundation
-* Since ticketing platforms receive heavy traffic on the ticket release date- EVC will be distributed on an unlimited number of websites through a plugin
-* Beta release of the SmartTicketing system is available- Q1 2018
-* News, emotions, photos, event maps, storage of autographed tickets form part of the application’s offering 
-
-<https://eventchain.io>
-
----
-
-# Upgraded Inc. 
-* It is Blockchain underpinning allows event owners to know exactly who has ownership over the life of the ticket, who ultimately was the fan who attended the events and provides valuable opportunities to reach the fan. 
-* Resides on the Ethereum Blockchain 
-
-<https://www.upgraded-inc.com> 
----
-
-# Crypto.Tickets
-
-* Tickets Wallet is a revolutionary app for storing smart tickets and  experiences
-* It is based on Ethereum blockchain technology
-* The app generates a dynamically changing code, which is impossible to copy or pass on
-
-+++
-
-* Each ticket has its own unique identifier, which is generated using a special encryption algorithm developed and thus is guarantees that the ticket cannot be counterfeited
-
-<https://crypto.tickets/forticketbuyers>
-
----
-
-![Roadmap](Roadmap.png)
-
----
-
-## Value-Adds
-
-* Anonymously sell a ticket
-* Dynamic QR code
-* Distributed on an unlimited number of websites through a plugin
-* Employ transaction caching to avoid accidental oversale
-* Friendly wrapper
-* News, emotions, photos, event maps, storage of autographed tickets form part of the application’s offering 
-
----
-
-## Notable 
-
-* Decentralised governance- TIX and AVT have instilled the reliance on the constant involvement of their tokens holders in the maintaining of the protocol
-* Transaction and processing costs? (The value of GET is guaranteed by covering for these transition and trading costs, with a minimum price of ETH 0.50 per smart ticket)
-* Token Velocity- the incentive for holding the token 
-
+An attempt to address some of these criticisms has been presented. [[31]], 
+- The HashGraph protocol is patented and is not open source.
+- In addition, the HashGraph white paper assumes that _n_, the number of nodes in the network, is constant. In practice, _n_ can increase, but performance likely degrades badly as _n_ becomes large. [[32]]
+- HashGraph is not as "fair" as claimed in their paper, with at least one attack being proposed. [[33]]
