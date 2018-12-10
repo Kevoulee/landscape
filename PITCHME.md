@@ -2,6 +2,49 @@
 
 ---
 
+## Consensus
+
+- Distributed agents (these could be computers, generals co-ordinating an attack, or sensors in a nuclear plant)
+that communicate via a network (be it digital, courier or mechanical) need to agree on facts in order to act
+as a coordinated whole.
+- When all non-faulty agents agree on a given fact, then we say that the network is in consensus.
+- Consensus is achieved when all non-faulty agents, agree on a prescribed fact. 
+
++++
+
+There are a host of formal requirements which a consensus protocol may adhere to; these include:
+
+- **Agreement:** Where all correct processes agree on the same fact 
+- **Weak Validity:** Where for all correct processes, the output must be the input for some correct process
+- **Strong Validity:** Where if all correct processes receive the same input value, they must all output that value
+- **Termination:** All processes must eventually decide on an output value 
+
+---
+
+## Byzantine Fault Tolerance 
+
+-Several papers in the literature contextualize the problem using generals at different camps, situated outside the enemy castle, needing to decide whether or not to attack. A consensus algorithm that would fail, would perhaps see one general attack while all the others stay back, resulting in the vulnerability of first general 
+- One key property of a block chain system is that the nodes do not trust each other, meaning that some may behave in Byzantine manners. The consensus protocol must therefore tolerate Byzantine failures. 
+
++++
+
+- A network is Byzantine Fault Tolerant when it can provide service and reach a consensus despite faults or failures of the system. The processes use a protocol for consensus or atomic broadcast (a broadcast where all correct processes in a system of multiple processes receive the same set of messages in the same order; that is, the same sequence of messages) to agree on a common sequence of operations to execute.
+- For systems with _n_ nodes, of which _f_ are Byzantine, it has been shown that _no algorithm exists_ that solves the consensus problem for _f > n/3_.[[21]]
+- So how then does the Bitcoin protocol get away with only needing 51% honest nodes to reach consensus?
+Well, strictly speaking, Bitcoin is NOT a BFT-CM because there is never absolute finality in bitcoin ledgers; there is always a
+chance (however small) that someone can 51% attack the network and rewrite the entire history. Bitcoin is a probabilistic consensus, rather than deterministic.
+
+---
+
+## Deterministic and Non-Deterministic Protocols
+
+- Deterministic, bounded Byzantine agreement relies on consensus being finalized for each epoch before moving to the next one ensuring that there is some safety about a consensus reference point prior to continuing. If instead you allow an unbounded number of consensus agreements within the same epoch, then there is no overall consensus reference point with which to declare finality and thus safety is compromised.
+- For non-deterministic or probabilistic protocols, the probability that an honest node is undecided after _r_ rounds approaches zero as r approaches infinity.
+- Non-deterministic protocols which solve consensus under the purely asynchronous case potentially rely on random oracles and generally incur high message complexity overhead, as they depend on reliable broadcasting for all communication.
+- Protocols like HoneyBadger BFT fall into this class of nondeterministic protocols under asynchrony. Normally, they require three instances of reliable broadcast for a single round of communication.
+
+---
+
 ## The 'Scalability' Trilemma
 
 **Decentralization** : a core principle on which majority of the systems are build, taking into account censorship-resistance and ensuring that everyone, without prejudice, is permitted to partake in the decentralized system.
@@ -9,6 +52,12 @@
 **Scalability** : encompasses the ability of the network to process transactions. Thus, if a public block chain is deemed to be efficient, effective and usable, it should be designed to handle millions of users on the network.
 
 **Security** : refers to the immutability of the ledger and takes into account threats of 51% attacks, Sybil attacks and DDoS attacks etc.
+
++++
+
+The scalability of BFT protocols considering the number of participants is highly limited and the performance of most protocols deteriorates as the number of involved replicas increases. This effect is especially problematic for BFT deployment in permissionless block chains.
+The problem of BFT scalability is twofold: a high throughput as well as a large consensus group with good reconfigurability that can tolerate a high number of failures are both desirable properties in BFT protocols, but are often in direct conflict.
+Several approaches have been employed to remedy these problems, e.g. threshold cryptography, creating new consensus groups for every round, or limiting the number of necessary messages to reach consensus. 
 
 ---
 
@@ -181,6 +230,8 @@ in parallel:
 - Each sync brings in new events, which are then added to the hash graph. All known events are then divided into rounds. 
 - Then the first events in each round are decided as being famous or not (through purely local Byzantine agreement with virtual voting). - Then the total order is found on those events for which enough information is available. If two members independently assign a position in history to an event, they are guaranteed to assign the same position, and guaranteed to never change it, even as more information comes in. Furthermore, each event is eventually assigned such a position, with probability one. 
 
++++
+
    ```procedure divideRounds
       for each event x
         r ← max round of parents of x ( or 1 if none exist )
@@ -192,7 +243,7 @@ in parallel:
    ```   
 +++
 
-The above is deemed the divideRounds procedure. As soon as an event x is known, it is assigned a round number x.round, and the boolean value x.witness is calculated, indicating whether it is the first event that a member created in that round. [[30]]
+What was just shown is deemed the divideRounds procedure. As soon as an event x is known, it is assigned a round number x.round, and the boolean value x.witness is calculated, indicating whether it is the first event that a member created in that round.
 ​    
    ```procedure decideFame
       for each event x in order from earlier rounds to later
@@ -217,11 +268,16 @@ The above is deemed the divideRounds procedure. As soon as an event x is known, 
             else // else flip a coin
               y.vote ← middle bit of y.signature
    ```
-This is the decideFame procedure. For each witness event (i.e., an event x where x.witness is true), decide whether it is famous (i.e., assign a boolean to x.famous). This decision is done by a Byzantine agreement protocol based on virtual voting. Each member runs it locally, on their own copy of the hashgraph, with no additional communication. It treats the events in the hashgraph as if they were sending votes to each other, though the calculation is purely local to a member’s computer. The member assigns votes to the witnesses of each round, for several rounds, until more than 2/3 of the population agrees. [[30]]
+
++++
+
+This is the decideFame procedure. For each witness event (i.e., an event x where x.witness is true), decide whether it is famous (i.e., assign a boolean to x.famous). This decision is done by a Byzantine agreement protocol based on virtual voting. Each member runs it locally, on their own copy of the hashgraph, with no additional communication. It treats the events in the hashgraph as if they were sending votes to each other, though the calculation is purely local to a member’s computer. The member assigns votes to the witnesses of each round, for several rounds, until more than 2/3 of the population agrees.
+
++++
 
 #### Criticisms
 
-An attempt to address some of these criticisms has been presented. [[31]], 
 - The HashGraph protocol is patented and is not open source.
-- In addition, the HashGraph white paper assumes that _n_, the number of nodes in the network, is constant. In practice, _n_ can increase, but performance likely degrades badly as _n_ becomes large. [[32]]
-- HashGraph is not as "fair" as claimed in their paper, with at least one attack being proposed. [[33]]
+- In addition, the HashGraph white paper assumes that _n_, the number of nodes in the network, is constant. In practice, _n_ can increase, but performance likely degrades badly as _n_ becomes large.
+- HashGraph is not as "fair" as claimed in their paper, with at least one attack being proposed.
+
