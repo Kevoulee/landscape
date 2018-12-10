@@ -23,7 +23,7 @@ There are a host of formal requirements which a consensus protocol may adhere to
 
 ## Byzantine Fault Tolerance 
 
--Several papers in the literature contextualize the problem using generals at different camps, situated outside the enemy castle, needing to decide whether or not to attack. A consensus algorithm that would fail, would perhaps see one general attack while all the others stay back, resulting in the vulnerability of first general 
+- Several papers in the literature contextualize the problem using generals at different camps, situated outside the enemy castle, needing to decide whether or not to attack. A consensus algorithm that would fail, would perhaps see one general attack while all the others stay back, resulting in the vulnerability of first general 
 - One key property of a block chain system is that the nodes do not trust each other, meaning that some may behave in Byzantine manners. The consensus protocol must therefore tolerate Byzantine failures. 
 
 +++
@@ -102,7 +102,7 @@ Several approaches have been employed to remedy these problems, e.g. threshold c
 
 ### HashGraph  
 
-- The Hashgraph consensus algorithm [30], was released in 2016. 
+- The Hashgraph consensus algorithm, was released in 2016. 
 - It claims Byzantine fault tolerance under complete asynchrony assumptions, no leaders, no round robin, no proof-of-work, eventual consensus with probability one, and high speed in the absence of faults.
 - It is based on the gossip protocol, which is a fairly efficient distribution strategy that entails nodes randomly sharing information with each other, similar to how human beings gossip with each other.
 - Nodes jointly build a hash graph reflecting all of the gossip events. 
